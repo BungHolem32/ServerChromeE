@@ -3,7 +3,6 @@ package com.fbinvestments;
 import org.java_websocket.WebSocketImpl;
 
 public class Main {
-
     public static void main(String[] args) {
         WebSocketImpl.DEBUG = true;
         int broadcastingPort = 8886; // 843 flash policy port

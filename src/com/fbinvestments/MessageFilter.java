@@ -25,11 +25,12 @@ public class MessageFilter implements Observer, Subject {
 
     @Override
     public void update(String message) {
+        //System.out.println(message);
         Gson gson = new Gson();
         Message fromJson = gson.fromJson(message, Message.class);
-        if (fromJson.extension == null || fromJson.url == null) {
+        if (fromJson.extension == null || fromJson.url == null || fromJson.phone == null) {
             return;
         }
-        this.notifyAllObservers(message);
+        this.notifyAllObservers(gson.toJson(fromJson));
     }
 }

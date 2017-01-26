@@ -6,9 +6,11 @@ package com.fbinvestments;
 public class Message {
     public String extension;
     public String url;
+    public String phone;
 
-    public Message(String extension, String url) {
+    public Message(String extension, String url, String phone) {
         this.extension = extension;
         this.url = url;
+        this.phone = phone;
     }
 }
