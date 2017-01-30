@@ -4,13 +4,13 @@ package com.fbinvestments;
  * Created by Alexa on 26/01/2017.
  */
 public class Message {
-    public String extension;
+    public String exten;
     public String url;
-    public String phone;
+    public String number;
 
-    public Message(String extension, String url, String phone) {
-        this.extension = extension;
+    public Message(String extension, String url, String number) {
+        this.exten = extension;
         this.url = url;
-        this.phone = phone;
+        this.number = number;
     }
 }

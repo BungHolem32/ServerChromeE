@@ -27,8 +27,15 @@ public class MessageFilter implements Observer, Subject {
     public void update(String message) {
         //System.out.println(message);
         Gson gson = new Gson();
-        Message fromJson = gson.fromJson(message, Message.class);
-        if (fromJson.extension == null || fromJson.url == null || fromJson.phone == null) {
+        Message fromJson = null;
+        try {
+            fromJson = gson.fromJson(message, Message.class);
+        } catch (Exception e) {
+            System.out.println("Error during parsing Json: " + e.getLocalizedMessage());
+            return;
+        }
+        if (fromJson.exten == null || fromJson.url == null || fromJson.number == null) {
+            System.out.println("Error during parsing Json");
             return;
         }
         this.notifyAllObservers(gson.toJson(fromJson));
