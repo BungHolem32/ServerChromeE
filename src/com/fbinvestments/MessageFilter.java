@@ -34,7 +34,7 @@ public class MessageFilter implements Observer, Subject {
             System.out.println("Error during parsing Json: " + e.getLocalizedMessage());
             return;
         }
-        if (fromJson.exten == null || fromJson.url == null || fromJson.number == null) {
+        if (fromJson.extension == null || fromJson.url == null || fromJson.phone == null) {
             System.out.println("Error during parsing Json");
             return;
         }
